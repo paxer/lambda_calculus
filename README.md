@@ -1,28 +1,54 @@
 # LambdaCalculus
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/lambda_calculus`. To experiment with that code, run `bin/console` for an interactive prompt.
+## Let’s get functional, functional.
 
-TODO: Delete this and the text above, and describe your gem
+We want to write calculations using functions and get the results.
+
+```ruby
+six(times(five)) # must return 30
+one(plus(nine)) # must return 10
+six(minus(three)) # must return 3
+eight(divided_by(two)) # must return 4
+```
+
+## Requirements
+
+* There must be a function for each number from 0 (“zero”) to 9 (“nine”)
+* There must be a function for each of the following mathematical operations: plus, minus, times, divided_by
+* Each calculation consist of exactly one operation and two numbers
+* The most outer function represents the left operand, the most inner function represents the right operand
 
 ## Installation
 
-Add this line to your application's Gemfile:
+#### Note: this gem was not published to RubyGems and exists only in this repository as it was done for learning and fun purposes. 
 
 ```ruby
-gem 'lambda_calculus'
+gem 'lambda_calculus', git: 'https://github.com/paxer/lambda_calculus'
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install lambda_calculus
-
 ## Usage
 
-TODO: Write usage instructions here
+Use directly via 
+```ruby
+LambdaCalculus.six(LambdaCalculus.times(LambdaCalculus.five))
+```
+
+or
+
+```ruby
+class MyClass
+  extend LambdaCalculus
+  
+  def my_method
+    six(times(five)) 
+  end
+end
+```
+
 
 ## Development
 
@@ -32,7 +58,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/lambda_calculus.
+Bug reports and pull requests are welcome on GitHub at https://github.com/paxer/lambda_calculus.
 
 ## License
 
