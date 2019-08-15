@@ -3,19 +3,27 @@ RSpec.describe LambdaCalculus do
     expect(LambdaCalculus::VERSION).not_to be nil
   end
 
-  it 'multiplying 6 by 5 must return 30' do
-    expect(LambdaCalculus.six(LambdaCalculus.times(LambdaCalculus.five))).to eq(30)
+  context 'multiplying' do
+    it '6 by 5 must return 30' do
+      expect(six(times(five))).to eq(30)
+    end
   end
 
-  it 'adding 1 to 9 must return 10' do
-    expect(LambdaCalculus.one(LambdaCalculus.plus(LambdaCalculus.nine))).to eq(10)
+  context 'adding' do
+    it '1 to 9 must return 10' do
+      expect(one(plus(nine))).to eq(10)
+    end
   end
 
-  it 'subtracting 6 from 3 must return 3' do
-    expect(LambdaCalculus.six(LambdaCalculus.minus(LambdaCalculus.three))).to eq(3)
+  context 'subtracting' do
+    it '6 from 3 must return 3' do
+      expect(six(minus(three))).to eq(3)
+    end
   end
 
-  it 'dividing 8 by 2 must return 4' do
-    expect(LambdaCalculus.eight(LambdaCalculus.divided_by(LambdaCalculus.two))).to eq(4)
+  context 'dividing' do
+    it '8 by 2 must return 4' do
+      expect(eight(divided_by(two))).to eq(4)
+    end
   end
 end
