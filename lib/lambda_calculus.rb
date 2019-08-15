@@ -1,6 +1,10 @@
 require "lambda_calculus/version"
 
 module LambdaCalculus
+  def zero(operation = nil)
+    operation ? operation.call(0) : 0
+  end
+
   def one(operation = nil)
     operation ? operation.call(1) : 1
   end
@@ -13,8 +17,8 @@ module LambdaCalculus
     operation ? operation.call(3) : 3
   end
 
-  def nine(operation = nil)
-    operation ? operation.call(9) : 9
+  def four(operation = nil)
+    operation ? operation.call(4) : 4
   end
 
   def five(operation = nil)
@@ -25,8 +29,16 @@ module LambdaCalculus
     operation ? operation.call(6) : 6
   end
 
+  def seven(operation = nil)
+    operation ? operation.call(7) : 7
+  end
+
   def eight(operation = nil)
     operation ? operation.call(8) : 8
+  end
+
+  def nine(operation = nil)
+    operation ? operation.call(9) : 9
   end
 
   def times(number)
