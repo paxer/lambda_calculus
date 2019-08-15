@@ -1,44 +1,29 @@
 require "lambda_calculus/version"
+require "ostruct"
 
 module LambdaCalculus
-  def zero(operation = nil)
-    operation ? operation.call(0) : 0
-  end
+  DIGITS = [
+    OpenStruct.new(name: :zero, value: 0),
+    OpenStruct.new(name: :one, value: 1),
+    OpenStruct.new(name: :two, value: 2),
+    OpenStruct.new(name: :three, value: 3),
+    OpenStruct.new(name: :four, value: 4),
+    OpenStruct.new(name: :five, value: 5),
+    OpenStruct.new(name: :six, value: 6),
+    OpenStruct.new(name: :seven, value: 7),
+    OpenStruct.new(name: :eight, value: 8),
+    OpenStruct.new(name: :nine, value: 9)
+  ].freeze
 
-  def one(operation = nil)
-    operation ? operation.call(1) : 1
-  end
-
-  def two(operation = nil)
-    operation ? operation.call(2) : 2
-  end
-
-  def three(operation = nil)
-    operation ? operation.call(3) : 3
-  end
-
-  def four(operation = nil)
-    operation ? operation.call(4) : 4
-  end
-
-  def five(operation = nil)
-    operation ? operation.call(5) : 5
-  end
-
-  def six(operation = nil)
-    operation ? operation.call(6) : 6
-  end
-
-  def seven(operation = nil)
-    operation ? operation.call(7) : 7
-  end
-
-  def eight(operation = nil)
-    operation ? operation.call(8) : 8
-  end
-
-  def nine(operation = nil)
-    operation ? operation.call(9) : 9
+  # generates methods like this for all supported digits
+  # def zero(operation = nil)
+  #   operation ? operation.call(0) : 0
+  # end
+  # etc...
+  DIGITS.each do |digit|
+    define_method digit.name do |operation = nil|
+      operation ? operation.call(digit.value) : digit.value
+    end
   end
 
   def times(number)
