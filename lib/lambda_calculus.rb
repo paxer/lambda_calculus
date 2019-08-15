@@ -6,6 +6,7 @@ module LambdaCalculus
   end
 
   def self.three(operation = nil)
+    operation ? operation.call(3) : 3
   end
 
   def self.nine(operation = nil)
@@ -29,6 +30,6 @@ module LambdaCalculus
   end
 
   def self.minus(number)
-
+    proc { |x, y| x - y }.curry.call(number)
   end
 end
