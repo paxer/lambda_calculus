@@ -2,11 +2,11 @@ require "lambda_calculus/version"
 
 module LambdaCalculus
   def self.one(operation = nil)
-
+    operation ? operation.call(1) : 1
   end
 
   def self.nine(operation = nil)
-
+    operation ? operation.call(9) : 9
   end
 
   def self.five(operation = nil)
@@ -22,6 +22,6 @@ module LambdaCalculus
   end
 
   def self.plus(number)
-
+    proc { |x, y| x + y }.curry.call(number)
   end
 end
