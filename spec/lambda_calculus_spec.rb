@@ -3,7 +3,7 @@ RSpec.describe LambdaCalculus do
     expect(LambdaCalculus::VERSION).not_to be nil
   end
 
-  it 'multiplying 6 by 5' do
+  it 'multiplying 6 by 5 must return 30' do
     expect(LambdaCalculus.six(LambdaCalculus.times(LambdaCalculus.five))).to eq(30)
   end
 end
