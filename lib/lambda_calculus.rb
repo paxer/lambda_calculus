@@ -38,7 +38,7 @@ module LambdaCalculus
   end
 
   def self.minus(number)
-    proc { |x, y| x - y }.curry.call(number)
+    proc { |x, y| y - x }.curry.call(number)
   end
 
   def self.divided_by(number)
