@@ -5,6 +5,10 @@ module LambdaCalculus
     operation ? operation.call(1) : 1
   end
 
+  def self.two(operation = nil)
+
+  end
+
   def self.three(operation = nil)
     operation ? operation.call(3) : 3
   end
@@ -21,6 +25,10 @@ module LambdaCalculus
     operation ? operation.call(6) : 6
   end
 
+  def self.eight(operation = nil)
+
+  end
+
   def self.times(number)
     proc { |x, y| x * y }.curry.call(number)
   end
@@ -31,5 +39,9 @@ module LambdaCalculus
 
   def self.minus(number)
     proc { |x, y| x - y }.curry.call(number)
+  end
+
+  def self.divided_by(number)
+
   end
 end
