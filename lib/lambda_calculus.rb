@@ -5,6 +5,9 @@ module LambdaCalculus
     operation ? operation.call(1) : 1
   end
 
+  def self.three(operation = nil)
+  end
+
   def self.nine(operation = nil)
     operation ? operation.call(9) : 9
   end
@@ -23,5 +26,9 @@ module LambdaCalculus
 
   def self.plus(number)
     proc { |x, y| x + y }.curry.call(number)
+  end
+
+  def self.minus(number)
+
   end
 end

@@ -10,4 +10,8 @@ RSpec.describe LambdaCalculus do
   it 'adding 1 to 9 must return 10' do
     expect(LambdaCalculus.one(LambdaCalculus.plus(LambdaCalculus.nine))).to eq(10)
   end
+
+  it 'Subtracting 6 from 3 must return 3' do
+    expect(LambdaCalculus.six(LambdaCalculus.minus(LambdaCalculus.three))).to eq(3)
+  end
 end
